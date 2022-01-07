@@ -1,7 +1,7 @@
 {
   "name": "build-apis-boss-machine",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Project Overview",
   "main": "server.js",
   "scripts": {
     "test": "cross-env PORT=8000 mocha --watch",
@@ -36,7 +36,18 @@
     "react-redux": "^5.0.6",
     "react-router": "^3.0.0",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
+    "redux-thunk": "^2.4.1",
     "webpack": "^3.5.5"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuri-Oliferchuk/Boss-Machine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yuri-Oliferchuk/Boss-Machine/issues"
+  },
+  "homepage": "https://github.com/Yuri-Oliferchuk/Boss-Machine#readme"
 }
