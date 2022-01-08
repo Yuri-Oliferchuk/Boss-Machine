@@ -1,12 +1,10 @@
 const express = require('express');
 const ideasRouter = express.Router();
-const {createMeeting,
-    getAllFromDatabase,
+const {getAllFromDatabase,
     getFromDatabaseById,
     addToDatabase,
     updateInstanceInDatabase,
-    deleteFromDatabasebyId,
-    deleteAllFromDatabase,} = require('./db.js');
+    deleteFromDatabasebyId,} = require('./db.js');
 
 ideasRouter.param('ideaId', (req, res, next, id) => {
     let ideas = getFromDatabaseById('ideas', id);
@@ -14,10 +12,8 @@ ideasRouter.param('ideaId', (req, res, next, id) => {
         req.ideas = ideas;
         next();
     } else {
-        console.log('stop')
         res.status(404).send();
     }
-
 })
 
 ideasRouter.get('/', (req, res) => {
