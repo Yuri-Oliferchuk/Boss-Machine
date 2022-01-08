@@ -1,5 +1,7 @@
 const express = require('express');
 const ideasRouter = express.Router();
+const checkMillionDollarIdea = require('./checkMillionDollarIdea.js');
+
 const {getAllFromDatabase,
     getFromDatabaseById,
     addToDatabase,
@@ -16,6 +18,7 @@ ideasRouter.param('ideaId', (req, res, next, id) => {
     }
 })
 
+
 ideasRouter.get('/', (req, res) => {
     res.send(getAllFromDatabase('ideas'));
 });
@@ -24,7 +27,8 @@ ideasRouter.get('/:ideaId', (req, res) => {
     res.send(req.ideas);
 });
 
-ideasRouter.post('/', (req, res) => {
+ideasRouter.post('/', checkMillionDollarIdea, (req, res, next) => {
+//ideasRouter.post('/', (req, res, next) => {
     let newIdea = addToDatabase('ideas', req.body);
     res.status(201).send(newIdea);
 });
