@@ -15,7 +15,7 @@ minionsRouter.use('/:minionId', (req, res, next) => {
             next();
         }
     }
-    res.status(404).send();    
+    res.status(404).send();
 });
 
 
